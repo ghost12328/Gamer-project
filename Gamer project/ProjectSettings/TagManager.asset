@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Gate
+  - L1Enemy
+  - Hero
+  - L2Enemy
+  - L3Enemy
   layers:
   - Default
   - TransparentFX
