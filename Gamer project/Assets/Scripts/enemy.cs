@@ -6,11 +6,13 @@ public class enemy : MonoBehaviour
 {
     float zstart;
     float direction = 1f;
+    private Animator animator;
     public float speed = .02f;
-    private int enemyHp;
+    public int enemyHp;
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         zstart = transform.position.z;
         //feel free to change any of the int values, these are just placeholders for the code
         enemyHp = 10;
@@ -19,14 +21,28 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //controls the movement and speed of the enemies
-        transform.Translate(new Vector3(0, 0, direction) * speed);
+        Move();
+        EnemyDeath();
     }
     void EnemyDeath()
     {
+        
         if (enemyHp <= 0)
         {
-            Destroy(this.gameObject);
+            //Animation
+            animator.SetInteger("Hp", 0);
+            Destroy(this.gameObject, 2);
+        }
+    }
+    void Move()
+    {
+        if(enemyHp > 0)
+        {
+            //controls the movement and speed of the enemies
+            transform.Translate(new Vector3(0, 0, direction) * speed);
+
+            //Animation
+            animator.SetFloat("speed", speed);
         }
     }
 }
