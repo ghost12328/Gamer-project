@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float playerHealth;
+    [SerializeField] private Text Health;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        UpdateHealth();
+    }
+    public void UpdateHealth()
+    {
+        Health.text = playerHealth.ToString("0");
+        if (playerHealth < 0)
+        {
+            Debug.Log("Game Over!");
+            SceneManager.LoadScene("gameover");
+        }
     }
 }
