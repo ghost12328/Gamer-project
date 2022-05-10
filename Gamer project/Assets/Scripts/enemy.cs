@@ -11,7 +11,7 @@ public class enemy : MonoBehaviour
     private Animator animator;
     public float speed = .02f;
     public int enemyHp;
-    private int enemy;
+    private int enemyLeft;
     // Start is called before the first frame update
     void Start()
     {

@@ -65,7 +65,7 @@ MonoBehaviour:
   _skeletonType: 0
   _updateRootPose: 0
   _updateRootScale: 1
-  _enablePhysicsCapsules: 0
+  _enablePhysicsCapsules: 1
 --- !u!114 &114392993255165844
 MonoBehaviour:
   m_ObjectHideFlags: 0
