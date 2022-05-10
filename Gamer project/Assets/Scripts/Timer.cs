@@ -47,7 +47,7 @@ public class Timer : MonoBehaviour
     {
         if (currentTime <= 0)
         {
-            SceneManager.LoadScene("Lose");
+            SceneManager.LoadScene("GameOver");
         }
     }
 }

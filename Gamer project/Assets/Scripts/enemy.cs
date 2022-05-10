@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class enemy : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class enemy : MonoBehaviour
     private Animator animator;
     public float speed = .02f;
     public int enemyHp;
+    private int enemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,4 +48,16 @@ public class enemy : MonoBehaviour
             animator.SetFloat("speed", speed);
         }
     }
+ public void enemyHasDied()
+    {
+        enemyLeft--;
+        print("enemyLeft");
+        if (enemyLeft == 0)
+        {
+            {
+                SceneManager.LoadScene("Victory");
+            }
+        }
+    }
+
 }
