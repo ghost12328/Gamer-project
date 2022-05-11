@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
 {
     public float playerHealth;
     [SerializeField] private Text Health;
+    int health = 200;
+
 
     private void Start()
     {

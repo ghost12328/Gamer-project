@@ -9,7 +9,7 @@ public class enemy : MonoBehaviour
     public Transform player;
     public float playerMinDistance = .05f;
     public float playerMaxDistance = 5f;
-
+    int health = 10;
     //variables for the pathfinding
     public Transform[] points;
     private int destPoint = 0;
@@ -63,16 +63,29 @@ public class enemy : MonoBehaviour
             // cycling to the start if necessary.
             destPoint = (destPoint + 1) % points.Length;
         }
-        
+
     }
-   
+
     void Update()
     {
-       
+
         // Choose the next destination point when the agent gets
         // close to the current one.
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
             GotoNextPoint();
         //distance = Vector3.Distance(transform.position, player.position);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("bullet"))
+        {
+            health -= 1;
+           
+            if (health <= 0)
+            {
+                //set death animation 
+
+            }
+        }
     }
 }
