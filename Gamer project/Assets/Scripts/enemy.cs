@@ -1,63 +1,78 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using System.Collections;
+using UnityEngine.AI;
 
 public class enemy : MonoBehaviour
 {
-    float zstart;
-    float direction = 1f;
+    //variables for the player
+    public Transform player;
+    public float playerMinDistance = .05f;
+    public float playerMaxDistance = 5f;
+
+    //variables for the pathfinding
+    public Transform[] points;
+    private int destPoint = 0;
+    private NavMeshAgent agent;
+    public float minDistance = .05f;
+    public float enemySpeed = 3f;
+
+    //variables for animations
     private Animator animator;
-    public float speed = .02f;
-    public int enemyHp;
-    private int enemyLeft;
-    // Start is called before the first frame update
+
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
+        //gets the animator attatched to the game object (the 2 enemies use different animators)
         animator = GetComponent<Animator>();
-        zstart = transform.position.z;
-        //feel free to change any of the int values, these are just placeholders for the code
-        enemyHp = 10;
+        //Walking Animation
+        animator.SetFloat("speed", 1);
+        // Disabling auto-braking allows for continuous movement
+        // between points (ie, the agent doesn't slow down as it
+        // approaches a destination point).
+        agent.autoBraking = false;
+
+        GotoNextPoint();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void GotoNextPoint()
     {
-        Move();
-        EnemyDeath();
-    }
-    void EnemyDeath()
-    {
-        
-        if (enemyHp <= 0)
-        {
-            //Animation
-            animator.SetInteger("Hp", 0);
-            Destroy(this.gameObject, 2);
-        }
-    }
-    void Move()
-    {
-        if(enemyHp > 0)
-        {
-            //controls the movement and speed of the enemies
-            transform.Translate(new Vector3(0, 0, direction) * speed);
+        // Returns if no points have been set up
+        if (points.Length == 0)
+            return;
 
-            //Animation
-            animator.SetFloat("speed", speed);
-        }
-    }
- public void enemyHasDied()
-    {
-        enemyLeft--;
-        print("enemyLeft");
-        if (enemyLeft == 0)
+        //checks to see if the player is in range, otherwise continue along path
+        if (Vector3.Distance(player.transform.position, transform.position) < playerMaxDistance)
         {
+            agent.destination = player.transform.position;
+            if (Vector3.Distance(player.transform.position, transform.position) < playerMinDistance)
             {
-                SceneManager.LoadScene("Victory");
+                //Attack animation
+                animator.SetBool("nearPlayer", true);
+                agent.speed = 0;
             }
         }
+        else
+        {
+            animator.SetBool("nearPlayer", false);
+            agent.speed = enemySpeed;
+            // Set the agent to go to the currently selected destination.
+            agent.destination = points[destPoint].position;
+            // Choose the next point in the array as the destination,
+            // cycling to the start if necessary.
+            destPoint = (destPoint + 1) % points.Length;
+        }
+        
     }
-
+   
+    void Update()
+    {
+       
+        // Choose the next destination point when the agent gets
+        // close to the current one.
+        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+            GotoNextPoint();
+        //distance = Vector3.Distance(transform.position, player.position);
+    }
 }

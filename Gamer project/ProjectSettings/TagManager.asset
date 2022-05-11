@@ -9,6 +9,7 @@ TagManager:
   - Hero
   - L2Enemy
   - L3Enemy
+  - Enemy
   layers:
   - Default
   - TransparentFX
