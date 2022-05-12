@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1399,6 +1399,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &187255336
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187255334}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 7, z: 3}
+  m_Center: {x: 0, y: 3.5, z: 0}
 --- !u!114 &187255337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1420,7 +1433,7 @@ MonoBehaviour:
   minDistance: 0.05
   enemySpeed: 3
   enemyHealth: 100
-  damangeEnemy: 10
+  damageEnemy: 10
 --- !u!4 &189742809 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4509784364034244, guid: 7f5abae2220262d448d1291734de367b,
@@ -2621,6 +2634,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &308844678
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308844676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 7, z: 3}
+  m_Center: {x: 0, y: 3.5, z: 0}
 --- !u!114 &308844679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2642,7 +2668,7 @@ MonoBehaviour:
   minDistance: 0.05
   enemySpeed: 3
   enemyHealth: 100
-  damangeEnemy: 10
+  damageEnemy: 10
 --- !u!4 &308872588 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4430907584103858, guid: e201a24a09e942042b93390d0444d728,
@@ -3163,7 +3189,20 @@ MonoBehaviour:
   minDistance: 0.05
   enemySpeed: 3
   enemyHealth: 100
-  damangeEnemy: 10
+  damageEnemy: 10
+--- !u!135 &339617887
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339617884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &341769962 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4655139138601034, guid: dca8e056b77d49c4aafe4dbcc2bab713,
@@ -3987,7 +4026,20 @@ MonoBehaviour:
   minDistance: 0.05
   enemySpeed: 3
   enemyHealth: 100
-  damangeEnemy: 10
+  damageEnemy: 10
+--- !u!135 &422895265
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422895262}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &428436347 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4150668574442040, guid: e201a24a09e942042b93390d0444d728,
@@ -6442,6 +6494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mSpeed: 4
   speed: 12
+  bullet: {fileID: 4181487466569267297, guid: bd00758cebb9a9b4bbc1ad22b50b3669, type: 3}
 --- !u!54 &749227613
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6453,7 +6506,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -7202,7 +7255,20 @@ MonoBehaviour:
   minDistance: 0.05
   enemySpeed: 3.5
   enemyHealth: 100
-  damangeEnemy: 10
+  damageEnemy: 10
+--- !u!135 &812902566
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812902563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &834599003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7427,6 +7493,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &883635830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883635828}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 7, z: 3}
+  m_Center: {x: 0, y: 3.5, z: 0}
 --- !u!114 &883635831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7448,7 +7527,7 @@ MonoBehaviour:
   minDistance: 0.05
   enemySpeed: 3
   enemyHealth: 100
-  damangeEnemy: 10
+  damageEnemy: 10
 --- !u!1001 &884254942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9276,6 +9355,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1135121227
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135121225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 7, z: 3}
+  m_Center: {x: 0, y: 3.5, z: 0}
 --- !u!114 &1135121228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9297,7 +9389,7 @@ MonoBehaviour:
   minDistance: 0.05
   enemySpeed: 3
   enemyHealth: 100
-  damangeEnemy: 10
+  damageEnemy: 10
 --- !u!4 &1149947743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4632502700799338, guid: c6a74181d4000004887343fb87b3c53a,
@@ -9503,7 +9595,20 @@ MonoBehaviour:
   minDistance: 0.05
   enemySpeed: 3
   enemyHealth: 100
-  damangeEnemy: 10
+  damageEnemy: 10
+--- !u!135 &1197262548
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197262545}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1197530414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9995,8 +10100,21 @@ MonoBehaviour:
   - {fileID: 1007357252}
   minDistance: 0.05
   enemySpeed: 3
-  enemyHealth: 100
-  damangeEnemy: 10
+  enemyHealth: 2
+  damageEnemy: 10
+--- !u!135 &1274285369
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274285365}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1293579603
 GameObject:
   m_ObjectHideFlags: 0
@@ -10423,7 +10541,7 @@ MonoBehaviour:
   minDistance: 0.05
   enemySpeed: 3
   enemyHealth: 100
-  damangeEnemy: 10
+  damageEnemy: 10
 --- !u!114 &1349849554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10809,7 +10927,20 @@ MonoBehaviour:
   minDistance: 0.05
   enemySpeed: 3
   enemyHealth: 100
-  damangeEnemy: 10
+  damageEnemy: 10
+--- !u!135 &1421643725
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421643722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1422818578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11484,6 +11615,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1520086736
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520086734}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 7, z: 3}
+  m_Center: {x: 0, y: 3.5, z: 0}
 --- !u!114 &1520086737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11505,7 +11649,7 @@ MonoBehaviour:
   minDistance: 0.05
   enemySpeed: 3
   enemyHealth: 100
-  damangeEnemy: 10
+  damageEnemy: 10
 --- !u!4 &1521682294 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 477022, guid: b06557ebaf0cf854795ad8c6f1f25fa3,
@@ -11904,6 +12048,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1591265174
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591265172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 7, z: 3}
+  m_Center: {x: 0, y: 3.5, z: 0}
 --- !u!114 &1591265175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11925,7 +12082,7 @@ MonoBehaviour:
   minDistance: 0.05
   enemySpeed: 3
   enemyHealth: 100
-  damangeEnemy: 10
+  damageEnemy: 10
 --- !u!4 &1596270907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4147382078780322, guid: e201a24a09e942042b93390d0444d728,
@@ -13188,8 +13345,8 @@ MonoBehaviour:
   - {fileID: 275384528}
   minDistance: 0.05
   enemySpeed: 3
-  enemyHealth: 100
-  damangeEnemy: 10
+  enemyHealth: 2
+  damageEnemy: 10
 --- !u!195 &1843449898
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -13212,6 +13369,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1843449899
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843449896}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 7, z: 3}
+  m_Center: {x: 0, y: 3.5, z: 0}
 --- !u!1 &1854032566
 GameObject:
   m_ObjectHideFlags: 0
@@ -13695,6 +13865,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1909132076
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909132074}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 7, z: 3}
+  m_Center: {x: 0, y: 3.5, z: 0}
 --- !u!114 &1909132077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13716,7 +13899,7 @@ MonoBehaviour:
   minDistance: 0.05
   enemySpeed: 3
   enemyHealth: 100
-  damangeEnemy: 10
+  damageEnemy: 10
 --- !u!1 &1915872802 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1349150361055734, guid: dca8e056b77d49c4aafe4dbcc2bab713,
@@ -13745,6 +13928,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1915872804
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915872802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 7, z: 3}
+  m_Center: {x: 0, y: 3.5, z: 0}
 --- !u!114 &1915872805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13766,7 +13962,7 @@ MonoBehaviour:
   minDistance: 0.05
   enemySpeed: 3
   enemyHealth: 100
-  damangeEnemy: 10
+  damageEnemy: 10
 --- !u!4 &1916312780 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010690109084, guid: 7cafb89b5a0f61f479d0a748962abbbc,
@@ -14551,6 +14747,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SWORD
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0ba58477d7691e144a0a24c07f308a44, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ba58477d7691e144a0a24c07f308a44, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -14838,7 +15038,20 @@ MonoBehaviour:
   minDistance: 0.05
   enemySpeed: 3
   enemyHealth: 100
-  damangeEnemy: 10
+  damageEnemy: 10
+--- !u!135 &2105439185
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105439182}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2107590001
 PrefabInstance:
   m_ObjectHideFlags: 0

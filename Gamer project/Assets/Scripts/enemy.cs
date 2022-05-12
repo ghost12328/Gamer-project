@@ -24,7 +24,7 @@ public class enemy : MonoBehaviour
     public float enemyHealth = 100f; 
 
     [SerializeField] [Header("Enemy Damage Taken")]
-     public float damangeEnemy = 10f;
+     public float damageEnemy = 10f;
 
     void Start()
     {
@@ -74,7 +74,15 @@ public class enemy : MonoBehaviour
 
     void Update()
     {
-
+        if (enemyHealth <= 0)
+        {
+            agent.speed = 0;
+            //set death animation 
+            animator.Play("die");
+            animator.Play("Fall1");
+            // Destroy(gameObject);
+            Destroy(this.gameObject, 6);
+        }
         // Choose the next destination point when the agent gets
         // close to the current one.
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
@@ -86,14 +94,10 @@ public class enemy : MonoBehaviour
         if (other.gameObject.CompareTag("bullet"))
         {
             enemyHealth -= 1;
-           
-            if (enemyHealth <= 0)
-            {
-                //set death animation 
-               // Destroy(gameObject);
-               
+            //hit animation
+            animator.SetTrigger("getHit");
 
-            }
+            
         }
     }
     public void DeductHealth(float deductHealth)
@@ -107,9 +111,11 @@ public class enemy : MonoBehaviour
     }
     public void EnemyDead()
     {
-       // Animation.Play("");
+        // Animation.Play("");
         // play dealth animation 
-       // Destroy(gameObject);
+        animator.SetInteger("Hp", 0);
+        // Destroy(this.gameObject, seconds delay);
+        Destroy(this.gameObject, 6);
         // destroys enemy 
     }
 }

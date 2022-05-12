@@ -8,6 +8,7 @@ public class Move : MonoBehaviour
     public float mSpeed;  
 
     public float speed = 12f;
+    public Rigidbody bullet;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +19,12 @@ public class Move : MonoBehaviour
     void Update()
     {
         transform.Translate(mSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0f, mSpeed * Input.GetAxis("Vertical") * Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Rigidbody fireBullet;
+            fireBullet = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
+            fireBullet.AddForce(transform.forward * 1000);
+        }
     }
+    
 }

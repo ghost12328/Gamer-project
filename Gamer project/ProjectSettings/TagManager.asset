@@ -10,6 +10,7 @@ TagManager:
   - L2Enemy
   - L3Enemy
   - Enemy
+  - bullet
   layers:
   - Default
   - TransparentFX
