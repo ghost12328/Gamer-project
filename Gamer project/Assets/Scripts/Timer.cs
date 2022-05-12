@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    public float currentTime = 0f;
+    public float currentTime = 90f;
 
     [SerializeField] [Header("Timer Settings")]
     public float startingTime = 10f;
@@ -27,7 +27,7 @@ public class Timer : MonoBehaviour
         // decreases by 1 each second
         countdownText.text = currentTime.ToString("Time Till Sunrise: 0");
 
-        if (currentTime >= 3.5f)
+        if (currentTime >= 60f)
         {
             countdownText.color = Color.black;
         }
@@ -47,6 +47,7 @@ public class Timer : MonoBehaviour
     {
         if (currentTime <= 0)
         {
+            Debug.Log("TIMER DID THIS");
             SceneManager.LoadScene("GameOver");
         }
     }

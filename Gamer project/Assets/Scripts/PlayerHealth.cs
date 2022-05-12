@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+using System;
+
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float playerHealth;
-    [SerializeField] private Text Health;
-    int health = 200;
+    public float playerHealth = 100f;
+    [SerializeField] public TMP_Text healthText;
+   // int health = 200;
 
 
     private void Start()
@@ -17,11 +20,31 @@ public class PlayerHealth : MonoBehaviour
     }
     public void UpdateHealth()
     {
-        Health.text = playerHealth.ToString("0");
-        if (playerHealth < 0)
-        {
-            Debug.Log("Game Over!");
-            SceneManager.LoadScene("gameover");
-        }
+       healthText.text = playerHealth.ToString("0");
+       
     }
+
+    private void OnDamageTaken(float onDamageTaken)
+    {
+         playerHealth -= onDamageTaken;
+
+        if (playerHealth <= 0)
+        {
+           PlayerDead();
+        }
+         healthText.text = playerHealth.ToString();
+    }
+    public void PlayerDead()
+    {
+       
+        
+            Debug.Log("Game Over!");
+            //SceneManager.LoadScene("gameover");
+        
+       // Animation.Play("");
+        // play dealth animation 
+       // Destroy(gameObject);
+        // destroys player
+    }
+    
 }

@@ -9,7 +9,7 @@ public class enemy : MonoBehaviour
     public Transform player;
     public float playerMinDistance = .05f;
     public float playerMaxDistance = 5f;
-    int health = 10;
+    //int health = 10;
     //variables for the pathfinding
     public Transform[] points;
     private int destPoint = 0;
@@ -19,6 +19,12 @@ public class enemy : MonoBehaviour
 
     //variables for animations
     private Animator animator;
+
+    [SerializeField] [Header("Enemy Health")]
+    public float enemyHealth = 100f; 
+
+    [SerializeField] [Header("Enemy Damage Taken")]
+     public float damangeEnemy = 10f;
 
     void Start()
     {
@@ -79,13 +85,31 @@ public class enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("bullet"))
         {
-            health -= 1;
+            enemyHealth -= 1;
            
-            if (health <= 0)
+            if (enemyHealth <= 0)
             {
                 //set death animation 
+               // Destroy(gameObject);
+               
 
             }
         }
+    }
+    public void DeductHealth(float deductHealth)
+    {
+        enemyHealth -= deductHealth;
+
+        if (enemyHealth <= 0)
+        {
+            EnemyDead();
+        }
+    }
+    public void EnemyDead()
+    {
+       // Animation.Play("");
+        // play dealth animation 
+       // Destroy(gameObject);
+        // destroys enemy 
     }
 }
